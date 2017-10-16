@@ -1,0 +1,17 @@
+<h1>All Categories</h1>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+      <%= link_to category.title, category_path(category) %>
+        <ul>
+          <% category.jobs.each do |job| %>
+            <li><%= link_to job.title %></li>
+          <% end %>
+        </ul>
+      </li>
+  </ul>
+  
+
+<% end %>
+
+<%# rails generate migration add_email_to_users email:string %>

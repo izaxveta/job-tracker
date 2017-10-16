@@ -2,6 +2,9 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
 
+  <%= select_tag "job[category_id]", 
+    options_for_select(@categories.map {|category| ["#{category.title}", category.id] }) %>
+
   <%= f.label :description %>
   <%= f.text_field :description %>
 
