@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
     end
 
     def new
-        @category = Category.new()
+        @category = Category.new
     end
 
     def create
@@ -17,6 +17,7 @@ class CategoriesController < ApplicationController
             flash[:success] = "You created #{@category.title}!"
             redirect_to category_path(@category)
         else
+            flash[:alert] = "#{@category.title} already exists!"
             render :new
         end
     end
@@ -35,6 +36,8 @@ class CategoriesController < ApplicationController
     def destroy
         @category = Category.find(params[:id])
         @category.destroy
+
+        flash.notice = "Category #{@category.title} deleted!"
 
         redirect_to categories_path
     end

@@ -6,6 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+  <header>
+    <%= link_to "Companies", companies_path %>
+    <%# <%= link_to "Jobs", company_jobs_path %> %>
+    <%= link_to "Categories", categories_path %>
+  </header>
 <body>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
