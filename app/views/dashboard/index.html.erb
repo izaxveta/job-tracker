@@ -5,7 +5,7 @@ Jobs Ranked By Popularity:
     <% end %>
 </ul>
 
-Top 3 Companies By Level Of Interest:
+Top 3 Companies By Average Level Of Interest:
 <ul>
     <% Job.top_three_companies.each do |company| %>
         <li><%= Company.find(company[0]).name %>: <%= company [1].round %></li>
@@ -14,3 +14,8 @@ Top 3 Companies By Level Of Interest:
 
 
 Jobs Available by Location:
+<ul>
+    <% Job.location_count.each do |location| %>
+        <li><%= link_to "#{location[0]}", "/jobs?location=#{location[0]}"%>: <%= location[1] %> jobs</li>
+    <% end %>
+</ul>
