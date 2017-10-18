@@ -1,1 +1,16 @@
-Dash
+Jobs Ranked By Popularity:
+<ul>
+    <% Job.job_level_of_interest.each do |range| %>
+        <li><%= range[0] %>: <%= range[1] %> jobs available</li>
+    <% end %>
+</ul>
+
+Top 3 Companies By Level Of Interest:
+<ul>
+    <% Job.top_three_companies.each do |company| %>
+        <li><%= Company.find(company[0]).name %>: <%= company [1].round %></li>
+    <% end %>
+</ul>
+
+
+Jobs Available by Location:
