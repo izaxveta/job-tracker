@@ -31,15 +31,16 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <% if @job.comments.empty? %>
     No comments for this job.
 <% else %>
-    <% @comments.each do |comment| %>
+    <% @comments.reverse.each do |comment| %>
         <br>
         <%= comment.content %><br>
         Posted on: 
         <%= comment.created_at.strftime('%A, %B %d, %Y') %>
+        at <%= comment.created_at.strftime('%l:%M %p') %>
         <% if comment.created_at != comment.updated_at %>
             <br>
             (Edited: <%= comment.updated_at.strftime('%A, %B %d, %Y') %>)
-            <br>    
         <% end %>
+        <br>
     <% end %>
 <% end %>
