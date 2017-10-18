@@ -23,3 +23,23 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <%= link_to "Edit", edit_company_job_path(@job.company, @job) %>
 <%= link_to "Delete", company_job_path(@job.company, @job), method: :delete, 
             data: {confirm: "Delete this job?"} %>
+
+<%= render partial: "comments/form" %>
+
+<h3>Comments</h3>
+
+<% if @job.comments.empty? %>
+    No comments for this job.
+<% else %>
+    <% @comments.each do |comment| %>
+        <br>
+        <%= comment.content %><br>
+        Posted on: 
+        <%= comment.created_at.strftime('%A, %B %d, %Y') %>
+        <% if comment.created_at != comment.updated_at %>
+            <br>
+            (Edited: <%= comment.updated_at.strftime('%A, %B %d, %Y') %>)
+            <br>    
+        <% end %>
+    <% end %>
+<% end %>
