@@ -8,10 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
   <header>
-  <h3><%= link_to "Job Tracker", '/' %></h3>
-    <%= link_to "Companies", companies_path %>
-    <%= link_to "Jobs", jobs_path %>
-    <%= link_to "Categories", categories_path %><br><br>
+  <h1><%= link_to "Job Tracker", '/' %></h1>
+    <h3><%= link_to "Companies", companies_path %>    
+    <%= link_to "Jobs", jobs_path %>    
+    <%= link_to "Categories", categories_path %><h3>
   </header>
 <body>
   <% flash.each do |name, msg| %>
@@ -21,6 +21,6 @@
 
 </body>
 <footer>
-  <h5>Hello!</h5>
+  <h5>Blog | Facebook | Twitter | LinkedIn</h5>
 </footer>
 </html>

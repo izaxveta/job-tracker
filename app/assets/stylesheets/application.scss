@@ -15,12 +15,28 @@
  */
 body {
     text-decoration: none;
+    color: black;
     background-color: rgb(255, 255, 255);
+    margin: 0;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 
     header {
         text-align: center;
         text-decoration-style: none;
         color: black;
+    }
+
+    footer {
+        background-color: #b4b4b4;
+        width: 100%;
+        position: relative;
+        position: fixed;
+        bottom: 0;
+        color: rgb(29, 29, 29);
+        text-align: center;
+        margin-left: -50px;
     }
 
     font: {	
@@ -29,6 +45,10 @@ body {
         style: normal;
         variant: normal;
         weight: 400;
+    }
+
+    h1 {
+        font-family: 'Didot';
     }
 
     h3 {
