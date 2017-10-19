@@ -2,7 +2,7 @@ class Job < ApplicationRecord
   validates :title, :level_of_interest, :city, presence: true
   belongs_to :company
   belongs_to :category, optional: true
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def self.job_level_of_interest
     interest_range = [(0..10), (11..20), (21..30), 

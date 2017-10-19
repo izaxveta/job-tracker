@@ -35,11 +35,13 @@ class CategoriesController < ApplicationController
 
     def destroy
         @category = Category.find(params[:id])
-        @category.destroy
-
-        flash.notice = "Category #{@category.title} deleted!"
-
-        redirect_to categories_path
+        if @category.destroy
+            flash.notice = "Category #{@category.title} deleted!"
+            redirect_to categories_path
+        else
+            redirect_to category_path(@category)
+            flash.notice = "Category is currently associated with existing jobs!"
+        end
     end
     
     private
