@@ -34,6 +34,16 @@ describe Job do
       expect(job).to respond_to(:company)
     end
 
+    it "belongs to a category" do
+      company = Company.new(name: "Villains & Co.")      
+      job = Job.new(title: "The Dark One",
+                    level_of_interest: 66,
+                    description: "Live forever and wreck havoc",
+                    city: "Enchanted Forest",
+                    company: company)
+      expect(job).to respond_to(:category)
+    end
+
     it "has many comments" do
       category = Category.new(title: "Fairytale")
       company = Company.new(name: "Villains & Co.")
