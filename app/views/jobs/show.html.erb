@@ -1,6 +1,5 @@
 Title: <%= @job.title %>
 <br>
-
 Category: <% if @job.category.nil?%> 
                 <%= "No Category" %> <%= link_to "Click To Add Category", edit_company_job_path(@job.company) %>
             <% else %>

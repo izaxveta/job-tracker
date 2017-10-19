@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
     @contacts = @company.contacts.all
     @jobs     = @company.jobs.all
     @contact  = Contact.new
-    redirect_to company_jobs_path(@company)
+    # redirect_to company_jobs_path(@company)
   end
 
   def edit

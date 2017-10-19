@@ -1,10 +1,10 @@
 class ContactsController < ApplicationController
     def create
-        @contact = Contact.new(contact_params)
-        @contact.save
-        flash[:success] = "#{@contact.name} was added as a contact!"
+        @company = Company.find(params[:company_id])
+        @company.contacts.create!(contact_params)
+        flash[:success] = "#{contact_params[:name]} was added as a contact!"
         
-        redirect_to company_path(@contact.company_id)
+        redirect_to company_path(@company)
     end
 
     private
