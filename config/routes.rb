@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root to: "dashboard#index"
   
   resources :companies do
-    resources :contacts, only: [:new, :create]
+    resources :contacts, only: [:create]
     resources :jobs do
-      resources :comments, only: [:new, :create]
+      resources :comments, only: [:create]
     end
   end
   resources :categories
