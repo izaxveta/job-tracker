@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
             redirect_to category_path(@category)
         else
             flash[:alert] = "#{@category.title} already exists!"
-            render :new
+            redirect_to new_category_path
         end
     end
 
