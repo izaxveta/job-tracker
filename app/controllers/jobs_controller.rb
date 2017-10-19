@@ -1,21 +1,21 @@
 class JobsController < ApplicationController
   def index
     if params[:location]
-      @jobs = Job.where(city: params[:location])
+      @jobs    = Job.where(city: params[:location])
     elsif params[:sort]
-      @jobs = Job.order(:city)
+      @jobs    = Job.order(:city)
     elsif params[:company_id]
       @company = Company.find(params[:company_id])
-      @jobs = @company.jobs
+      @jobs    = @company.jobs
     else
-      @jobs = Job.all
+      @jobs    = Job.all
     end
   end
 
   def new
-    @company = Company.find(params[:company_id])
+    @company    = Company.find(params[:company_id])
     @categories = Category.all
-    @job = Job.new
+    @job        = Job.new
   end
 
   def create
@@ -30,16 +30,15 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:id])
-    @comments = @job.comments.all
-    
-    @comment = Comment.new
+    @job            = Job.find(params[:id])
+    @comments       = @job.comments.all
+    @comment        = Comment.new
     @comment.job_id = @job.id
   end
 
   def edit
-    @job = Job.find(params[:id])
-    @company = @job.company
+    @job        = Job.find(params[:id])
+    @company    = @job.company
     @categories = Category.all
   end
 

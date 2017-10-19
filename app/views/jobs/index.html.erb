@@ -1,11 +1,11 @@
 <h3>All Jobs</h3>
 
-  <ul>
-    <% @jobs.each do |job| %>
+<ul>
+  <% @jobs.each do |job| %>
       <li><%= link_to job.title, company_job_path(job.company, job) %>, 
       <%= link_to job.company.name, company_path(job.company) %> - 
       <%= link_to "Edit", edit_company_job_path(job.company, job) %>
-      <%= link_to "Delete", company_job_path(job.company, job), method: 'delete' %>
-    <% end %>
-  </ul>
+      <%= link_to "Delete", company_job_path(job.company, job), method: 'delete' %></li>
+  <% end %>
+</ul>
   

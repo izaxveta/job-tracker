@@ -18,11 +18,10 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @company = Company.find(params[:id])
+    @company  = Company.find(params[:id])
     @contacts = @company.contacts.all
-    @jobs = @company.jobs.all
-
-    @contact = Contact.new
+    @jobs     = @company.jobs.all
+    @contact  = Contact.new
     redirect_to company_jobs_path(@company)
   end
 

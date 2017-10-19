@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     def create
-        @comment = Comment.new(comment_params)
+        @comment        = Comment.new(comment_params)
         @comment.job_id = params[:job_id]
 
         @comment.save

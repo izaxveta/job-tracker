@@ -3,19 +3,18 @@
 <%= link_to "Add New Job", new_company_job_path(@company) %>
 
 <ul>
-<% @company.jobs.each do |job| %>
-  <li><%= link_to job.title, company_job_path(@company, job) %></li>
-<% end %>
+  <% @company.jobs.each do |job| %>
+    <li><%= link_to job.title, company_job_path(@company, job) %></li>
+  <% end %>
 </ul>
 
 Contacts:
 <ul>
   <% @contacts.each do |contact| %>
-    <li><%= "#{contact.name}, #{contact.position}"%><br>
-    Email: <%= contact.email %></li>
+      <li><%= "#{contact.name}, #{contact.position}"%><br>
+      Email: <%= contact.email %></li>
   <% end %>
 </ul>  
 
 <%= render partial: "contacts/form" %>
-
 
